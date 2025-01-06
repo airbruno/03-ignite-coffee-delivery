@@ -4,8 +4,8 @@ export const defaultTheme = {
   'yellow-dark': '#c47f17',
   'yelow-light': '#f1e9c9',
   // eslint-disable-next-line prettier/prettier
-  'purple': '#4b2995',
-  'purple-dark': '#8047f8',
+  'purple': '#8047F8',
+  'purple-dark': '#4B2995',
   'purple-light': '#ebe5f9',
   'base-title': '#272221',
   'base-subtitle': '#403937',

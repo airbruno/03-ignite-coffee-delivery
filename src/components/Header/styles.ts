@@ -3,8 +3,11 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
+  max-width: 1440px;
+  height: 104px;
 
   padding: 2rem 10rem;
+  white-space: nowrap;
 
   nav {
     display: flex;
@@ -19,6 +22,7 @@ export const LocationContainer = styled.div`
   align-items: center;
   gap: 0.25rem;
   padding: 0.5rem;
+  font-size: 0.875rem;
 
   background: ${(props) => props.theme['purple-light']};
   color: ${(props) => props.theme['purple-dark']};
@@ -32,6 +36,8 @@ export const CartContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    width: 40px;
+    height: 40px;
 
     text-decoration: none;
     border-radius: 6px;
