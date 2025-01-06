@@ -2,7 +2,7 @@ export const defaultTheme = {
   // eslint-disable-next-line prettier/prettier
   'yellow': '#dbac2c',
   'yellow-dark': '#c47f17',
-  'yelow-light': '#',
+  'yelow-light': '#f1e9c9',
   // eslint-disable-next-line prettier/prettier
   'purple': '#4b2995',
   'purple-dark': '#8047f8',
