@@ -1,61 +1,28 @@
+import { ICoffee } from '../../../../contexts/ShoppingCartContext'
 import { CoffeeItem } from '../CoffeeItem'
 import { List, ListContainer } from './styles'
-import expresso from '../../../../assets/Type=Expresso.png'
 
-export function CoffeeList() {
+interface ICoffeeListProps {
+  inventory: ICoffee[]
+}
+
+export function CoffeeList(props: ICoffeeListProps) {
+  const { inventory } = props
+
   return (
     <ListContainer>
       <h1>Nossos cafés</h1>
       <List>
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
-        <CoffeeItem
-          imgSrc={expresso}
-          category={'TRADICIONAL'}
-          name={'Expresso Tradicional'}
-          description={'O tradicional cafe com agua quente e graos moidos'}
-          price={9.9}
-        />
+        {inventory.map((item) => (
+          <CoffeeItem
+            key={item.name}
+            imgSrc={`src/assets/Type=${item.name}.png`}
+            category={item.category[0]}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+          />
+        ))}
       </List>
     </ListContainer>
   )

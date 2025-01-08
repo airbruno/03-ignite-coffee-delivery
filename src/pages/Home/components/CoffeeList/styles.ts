@@ -8,10 +8,11 @@ export const ListContainer = styled.div`
 
 export const List = styled.div`
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(
-    4,
-    1fr
+    auto-fit,
+    minmax(256px, 256px)
   ); /* Create up to 3 equal-width columns */
   gap: 40px 32px; /* Space between items */
-  max-width: 100%; /* Optional: limits the overall width */
+  max-width: calc(256px * 5);
 `

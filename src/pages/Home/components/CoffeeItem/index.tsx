@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { Input } from '../Input'
+import { useContext, useState } from 'react'
+import { IncrementalInput } from '../IncrementalInput'
 import { FormContainer, CardFooter, CoffeeCard } from './styles'
 import { ShoppingCart } from 'phosphor-react'
+import { ShoppingCartContext } from '../../../../contexts/ShoppingCartContext'
 
 interface ICoffeeItemProps {
   imgSrc: string
@@ -13,6 +14,7 @@ interface ICoffeeItemProps {
 
 export function CoffeeItem(props: ICoffeeItemProps) {
   const [quantity, setQuantity] = useState(0)
+  const { addItemToCart } = useContext(ShoppingCartContext)
 
   function handleIncreaseQuantity(e: React.SyntheticEvent) {
     e.preventDefault()
@@ -21,6 +23,15 @@ export function CoffeeItem(props: ICoffeeItemProps) {
   function handleDecreaseQuantity(e: React.SyntheticEvent) {
     e.preventDefault()
     if (quantity > 0) setQuantity(quantity - 1)
+  }
+
+  function handleCheckoutClick(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault()
+    addItemToCart({
+      name: props.name,
+      quantity,
+    })
+    setQuantity(0)
   }
 
   return (
@@ -40,12 +51,13 @@ export function CoffeeItem(props: ICoffeeItemProps) {
           </strong>
         </div>
         <FormContainer>
-          <Input
+          <IncrementalInput
+            id={props.name}
             quantity={quantity}
             increaseQuantity={handleIncreaseQuantity}
             decreaseQuantity={handleDecreaseQuantity}
           />
-          <button className="checkoutButton" type="submit">
+          <button className="checkoutButton" onClick={handleCheckoutClick}>
             <ShoppingCart size={22} weight="fill" />
           </button>
         </FormContainer>

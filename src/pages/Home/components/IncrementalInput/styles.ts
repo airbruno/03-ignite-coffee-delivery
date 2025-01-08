@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const InputContainer = styled.div`
+  position: relative;
   /* Hide number controls in Safari */
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
@@ -10,7 +11,6 @@ export const InputContainer = styled.div`
 
   /* Ensure consistent appearance */
   input[type='number'] {
-    -moz-appearance: textfield; /* For Firefox */
     appearance: textfield; /* For modern browsers */
   }
 
@@ -34,21 +34,25 @@ export const InputContainer = styled.div`
   }
 
   .plus {
-    position: relative;
-    top: 2px;
-    left: -20px;
+    position: absolute;
+    top: 30%; /* Move 50% down from the top of the container */
+
+    text-align: center; /* Optional: centers text horizontally */
+    left: 55%;
+    transform: translateX(70%);
   }
 
   .minus {
-    position: relative;
-    top: 2px;
-    left: 20px;
+    position: absolute;
+    top: 30%; /* Move 50% down from the top of the container */
+
+    text-align: center; /* Optional: centers text horizontally */
+    left: 45%;
+    transform: translateX(-170%);
   }
 
   button {
     background: transparent;
-    display: inline-block;
-    width: 16px;
 
     margin: 0;
     padding: 0;

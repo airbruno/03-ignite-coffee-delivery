@@ -3,10 +3,9 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  max-width: 1440px;
   height: 104px;
 
-  padding: 2rem 10rem;
+  padding: 2rem 5rem;
   white-space: nowrap;
 
   nav {
@@ -43,7 +42,29 @@ export const CartContainer = styled.div`
     border-radius: 6px;
     cursor: pointer;
 
-    background: ${(props) => props.theme['yelow-light']};
+    background: ${(props) => props.theme['yellow-light']};
     color: ${(props) => props.theme['yellow-dark']};
+    position: relative;
+
+    span {
+      position: absolute;
+      border-radius: 50%;
+      top: -10px;
+      left: 30px;
+
+      height: 1.25rem;
+      width: 1.25rem;
+
+      line-height: 1.3;
+      font-weight: bold;
+      font-size: 0.875rem;
+
+      background-color: ${(props) => props.theme['yellow-dark']};
+      color: ${(props) => props.theme.white};
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `

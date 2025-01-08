@@ -22,7 +22,7 @@ export const CoffeeCard = styled.div`
     font-size: 0.675rem;
     font-weight: bold;
     color: ${(props) => props.theme['yellow-dark']};
-    background: ${(props) => props.theme['yelow-light']};
+    background: ${(props) => props.theme['yellow-light']};
     text-align: center;
     border-radius: 100px;
     margin-top: -45px;

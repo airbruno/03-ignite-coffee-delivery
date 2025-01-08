@@ -1,13 +1,14 @@
 import { Plus, Minus } from 'phosphor-react'
 import { InputContainer } from './styles'
 
-interface IInputProps {
+interface IIncrementalInputProps {
   increaseQuantity: (e: React.SyntheticEvent) => void
   decreaseQuantity: (e: React.SyntheticEvent) => void
   quantity: number
+  id: string
 }
 
-export function Input(props: IInputProps) {
+export function IncrementalInput(props: IIncrementalInputProps) {
   return (
     <InputContainer>
       <button className="minus" onClick={props.decreaseQuantity}>
@@ -15,6 +16,7 @@ export function Input(props: IInputProps) {
       </button>
       <input
         type="number"
+        id={props.id}
         value={props.quantity}
         min={1}
         max={99}
